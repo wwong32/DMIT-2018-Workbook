@@ -10,9 +10,16 @@ namespace WestWindConsole.DAL
 {
     public class WestWindContext : DbContext
     {
+        // By default, Entity Framework(EF) will automatically re-create the database
+        //if it doesn't find one where the connection string is pointing
         public WestWindContext() : base("name=WWdb")
         {
             // TODO: Demonstrate null database initializer
+            // we set the database initializer inside the constructor of our Dbcontext class.
+            // Setting it to null will prevent Entity Framework from re-creating the database 
+            //if it can't find it (which is what we wawnt most of the time).
+
+            // An alternative place to "turn off" or disable database initialization is in the web.config or app.config file.
             Database.SetInitializer<WestWindContext>(null);
         }
 

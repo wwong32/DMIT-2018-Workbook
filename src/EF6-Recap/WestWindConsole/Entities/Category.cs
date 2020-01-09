@@ -9,10 +9,10 @@ using System.Threading.Tasks;
 namespace WestWindConsole.Entities
 {
     // TODO: Begin reviewing entity attributes
-    [Table("Categories")]
+    [Table("Categories")] //this is called an "attribute" of the class. It adds extra information about the name of the database table that the Category class "maps to".
     public class Category
     {
-        [Key]
+        [Key] //Identifies this property as mapping to the primary key
         public int CategoryID { get; set; }
 
         [Required] // Use this for string/varchar columns that are NOT NULL
@@ -27,7 +27,13 @@ namespace WestWindConsole.Entities
         public string PictureMimeType { get; set; }
 
         // TODO: Introducing Navigation Properties
+        // this is a "navigation property" that references a collection of 
+        // Producs that belong this category
+        //The virtual keyword allows us to do "lazy-loading".
+        //"Lazy-loading" is where we want to get the category "without" all the products. 
         public virtual ICollection<Product> Products { get; set; } =
+            //Notice I "initialilze" the property with a new HashSet<Product>
+            //Think of this as an "empty list" that I am initializing it with.
             new HashSet<Product>();
     }
 }

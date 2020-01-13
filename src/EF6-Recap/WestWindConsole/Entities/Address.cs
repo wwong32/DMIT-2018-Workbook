@@ -30,6 +30,15 @@ namespace WestWindConsole.Entities
         #region Navigation Properties
         public virtual ICollection<Supplier> Suppliers { get; set; } =
             new HashSet<Supplier>();
+
+        public virtual ICollection<Order> Orders { get; set; } =
+            new HashSet<Order>();
+
+        public virtual ICollection<Employee> Employees{ get; set; } =
+            new HashSet<Employee>();
+        public virtual ICollection<Customer> Customers{ get; set; } =
+             new HashSet<Customer>();
+
         #endregion
 
     }

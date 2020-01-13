@@ -16,5 +16,9 @@ namespace WestWindConsole.Entities
         public int ShipmentID { get; set; }
         public int ProductID { get; set; }
         public int ShipQuantity { get; set; }
+        public virtual ICollection<Product> Products { get; set; } =
+    new HashSet<Product>();
+        public virtual ICollection<Shipper> Suppliers{ get; set; } =
+    new HashSet<Shipper>();
     }
 }

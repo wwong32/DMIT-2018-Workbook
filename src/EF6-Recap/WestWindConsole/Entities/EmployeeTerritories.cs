@@ -15,5 +15,8 @@ namespace WestWindConsole.Entities
         public int EmployeeID { get; set; }
         [Key, Column(Order = 2)]
         public string TerritoryID { get; set; }
+
+        public virtual ICollection<Employee> Employees { get; set; } =
+            new HashSet<Employee>();
     }
 }

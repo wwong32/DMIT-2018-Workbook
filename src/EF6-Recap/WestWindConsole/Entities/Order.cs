@@ -23,5 +23,12 @@ namespace WestWindConsole.Entities
         public string ShipName { get; set; }
         public int ShipAdressID { get; set; }
         public string Comments { get; set; }
+
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; } =
+    new HashSet<OrderDetail>();
+        public virtual ICollection<Payment> Payments { get; set; } =
+    new HashSet<Payment>();
+        public virtual ICollection<Shipment> Shipments { get; set; } =
+    new HashSet<Shipment>();
     }
 }

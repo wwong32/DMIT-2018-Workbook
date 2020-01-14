@@ -33,5 +33,10 @@ namespace WestWindConsole.DAL
         public DbSet<Shipment> Shipments { get; set; }
 
         // TODO: Practice - Add entities and DbSet<> properties for the remaining tables
+        protected override void OnModelCreating (DBModelBuilder modelBuilder)
+        {
+            //the OnmodelCreating method is where mapping information between the entities and the actual database can be done in addition to or in place of mapping that happens via attributes 
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

@@ -9,7 +9,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{1FEDBD0C-68F4-4D9E-BCD2-B0902FC98F9D}</ProjectGuid>
+    <ProjectGuid>{C29BE704-A2F0-48DF-A4B2-4BA664F732A4}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -18,7 +18,7 @@
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort>44330</IISExpressSSLPort>
+    <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -53,6 +53,9 @@
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FreeCode.WebApp, Version=0.1.7205.21979, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FreeCode.WebApp.0.1.7205.21979\lib\net472\FreeCode.WebApp.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -129,7 +132,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="Inventory\ManageInventory2.aspx" />
     <Content Include="Inventory\ManageProducts.aspx" />
+    <Content Include="Inventory\ProductsByCategory.aspx" />
+    <Content Include="Inventory\SearchInventory.aspx" />
+    <Content Include="Sandbox\ProductSelection.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
@@ -160,6 +167,7 @@
     <Content Include="Scripts\WebForms\WebParts.js" />
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Site.Master" />
+    <Content Include="UserControls\MessageUserControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -192,6 +200,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\ManageInventory2.aspx.cs">
+      <DependentUpon>ManageInventory2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\ManageInventory2.aspx.designer.cs">
+      <DependentUpon>ManageInventory2.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Inventory\ManageProducts.aspx.cs">
       <DependentUpon>ManageProducts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -199,7 +214,28 @@
     <Compile Include="Inventory\ManageProducts.aspx.designer.cs">
       <DependentUpon>ManageProducts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Inventory\ProductsByCategory.aspx.cs">
+      <DependentUpon>ProductsByCategory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\ProductsByCategory.aspx.designer.cs">
+      <DependentUpon>ProductsByCategory.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory\SearchInventory.aspx.cs">
+      <DependentUpon>SearchInventory.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inventory\SearchInventory.aspx.designer.cs">
+      <DependentUpon>SearchInventory.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sandbox\ProductSelection.aspx.cs">
+      <DependentUpon>ProductSelection.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sandbox\ProductSelection.aspx.designer.cs">
+      <DependentUpon>ProductSelection.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -238,7 +274,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WestWindSystem\WestWindSystem.csproj">
-      <Project>{6a403320-f2a2-4803-83d4-83658887cf47}</Project>
+      <Project>{b797f07e-d608-4fc1-ab1b-d2b697dd7e69}</Project>
       <Name>WestWindSystem</Name>
     </ProjectReference>
   </ItemGroup>
@@ -255,11 +291,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51876</DevelopmentServerPort>
+          <DevelopmentServerPort>50195</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>https://localhost:44333/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>https://localhost:44332/</IISAppRootUrl>
+          <IISUrl>http://localhost:50195/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

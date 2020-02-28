@@ -7,27 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp.Inventory {
+namespace WebApp {
     
     
-    public partial class ManageProducts {
+    public partial class SiteMaster {
         
         /// <summary>
-        /// ProductInventoryGridView control.
+        /// MainContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ProductInventoryGridView;
-        
-        /// <summary>
-        /// ProductInventoryDataSource control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ObjectDataSource ProductInventoryDataSource;
+        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
     }
 }

@@ -5,7 +5,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A403320-F2A2-4803-83D4-83658887CF47}</ProjectGuid>
+    <ProjectGuid>{B797F07E-D608-4FC1-AB1B-D2B697DD7E69}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WestWindSystem</RootNamespace>
@@ -54,6 +54,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\InventoryController.cs" />
+    <Compile Include="DataModels\CategorizedProducts.cs" />
+    <Compile Include="DataModels\ProductInfo.cs" />
+    <Compile Include="DataModels\ProductSummary.cs" />
     <Compile Include="Entities\Address.cs" />
     <Compile Include="Entities\BuildVersion.cs" />
     <Compile Include="Entities\Category.cs" />
@@ -73,11 +76,11 @@
     <Compile Include="DAL\WestWindContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

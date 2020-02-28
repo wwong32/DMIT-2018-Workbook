@@ -1,0 +1,23 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace WebApp.Inventory
+{
+    public partial class ManageProducts : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void HandleExceptions(object sender, ObjectDataSourceStatusEventArgs e)
+        {
+            // Tell the user control to handle any exceptions
+            MessageUserControl.HandleDataBoundException(e);
+        }
+    }
+}

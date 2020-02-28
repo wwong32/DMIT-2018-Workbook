@@ -7,29 +7,36 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WebApp
-{
-
-
-    public partial class SiteMaster
-    {
-
+namespace WebApp.Sandbox {
+    
+    
+    public partial class ProductSelection {
+        
         /// <summary>
-        /// HeadContent control.
+        /// MessageUserControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
-
+        protected global::FreeCode.WebApp.UserControls.MessageUserControl MessageUserControl;
+        
         /// <summary>
-        /// MainContent control.
+        /// SourceProductsGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView SourceProductsGridView;
+        
+        /// <summary>
+        /// DestinationGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView DestinationGridView;
     }
 }

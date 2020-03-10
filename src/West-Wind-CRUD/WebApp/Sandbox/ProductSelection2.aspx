@@ -5,18 +5,21 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
         <div class="col-md-12">
-            <h1 class="page-header">Product Selection(ListView)</h1>
+            <h1 class="page-header">Product Selection (ListView)</h1>
             <uc1:MessageUserControl runat="server" ID="MessageUserControl" />
         </div>
     </div>
     <div class="row">
         <div class="col-md-6">
-            <asp:ListView ID="AvailableProductsListView" runat="server" OnSelectedIndexChanged="AvailableProductsListView_SelectedIndexChanged">
+            <asp:ListView ID="AvailableProductsListView" runat="server"
+                 OnSelectedIndexChanged="AvailableProductsListView_SelectedIndexChanged">
                 <ItemTemplate>
-                    <asp:LinkButton ID ="AddProduct" runat="server" CommandName="Select">Add</asp:LinkButton>
+                    <asp:LinkButton ID="AddProduct" runat="server"
+                         CommandName="Select">Add</asp:LinkButton>
                 </ItemTemplate>
-                </asp:ListView>
+            </asp:ListView>
+        </div>
+        <div class="col-md-6">
+        </div>
     </div>
-
-
 </asp:Content>

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WestWindSystem.DataModels.OrderProcessing
 {
@@ -12,8 +9,9 @@ namespace WestWindSystem.DataModels.OrderProcessing
         public string ShipToName { get; set; }
         public DateTime OrderedDate { get; set; }
         public DateTime RequiredDate { get; set; }
-        public int DaysToDelivery { get { return (RequiredDate - OrderedDate).Days; } } // Calculated
-        public List<ProductSummary> OutstandingItems { get; set; }
+        public int DaysToDelivery // TODO: Fix bug in calculation for long timespans
+        { get { return (RequiredDate - OrderedDate).Days; } } // Calculated
+        public IEnumerable<ProductSummary> OutstandingItems { get; set; }
         public string Comments { get; set; }
         public string FullShippingAddress { get; set; }
     }

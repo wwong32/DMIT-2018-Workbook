@@ -26,6 +26,13 @@
                         <tr runat="server" id="itemPlaceholder"></tr>
                     </table>
                 </LayoutTemplate>
+                <EmptyDataTemplate>
+                    <table>
+                        <tr>
+                            <td>No order to ship</td>
+                        </tr>
+                    </table>
+                </EmptyDataTemplate>
                 <ItemTemplate>
                     <tr>
                         <td>
@@ -47,6 +54,51 @@
                         </td>
                     </tr>
                 </ItemTemplate>
+                <EditItemTemplate>
+                    <tr>
+                        <td>
+                            (<asp:Label ID="OrderIdLabel" runat="server"
+                                Text="<%#Item.OrderID %>" />)
+                            <%# Item.ShipToName %>
+                        </td>
+                        <td>
+                             <%# Item.OrderedDate.ToString("MMM dd, yyyy") %>
+                        </td>
+                        <td>
+                            <%# Item.RequiredDate.ToString("MMM dd, yyyy") %>
+                            - in <%# Item.DaysToDelivery %> days
+                        </td>
+                        <td>
+                            <asp:LinkButton ID="CancelEdit" runat="server"
+                                CommandName="Cancel" CssClass="btn btn-default">
+                                Close
+                            </asp:LinkButton>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <asp:Label ID="OrderComments" runat="server" Text="<%# Item.Comments %>" />
+                            <asp:DropDownList ID="ShipperDropDown" runat="server">
+
+                            </asp:DropDownList>
+                           <%-- Typically, we would put out our ObjectDataSource outside of the ListView/GridView. But, in this case we are only needing 
+                            the data for the EditItemTemplate.Since only one row can  be in "edit mode" at a time, it's ok to put ObjectDataSource here.
+                            The same principle can be applied to the SelectedItemTemplate.
+                            <asp:ObjectDataSource ID="ShipperDataSource" runat="server" />--%>
+                                <asp:GridView ID="ProductsGridView" runat="server"> 
+                            
+                            </asp:GridView>
+                            <asp:Label ID="ShippingAddress" runat="server"
+                                Text="<%# Item.FullShippingAdress %>" />
+                            <asp:TextBox ID="TrackingCode" runat="server" />
+                            <asp:TextBox ID="FreightCharge" runat="server" />
+                            <asp:LinkButton ID="ShipOrder" runat="server"
+                                CommandNmae="Ship" CssClass="btn btn-primary">
+                                Ship Order
+                            </asp:LinkButton>
+                        </td>
+                    </tr>
+                </EditItemTemplate> 
             </asp:ListView>
 
             <asp:HiddenField ID="TempSupplier" runat="server" Value="3" />
